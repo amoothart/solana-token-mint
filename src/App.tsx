@@ -1,6 +1,7 @@
 import './App.css';
 import MintNft from './MintNft';
 import MintToken from './MintToken';
+import SendSol from './SendSol';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <header className="App-header">
         <MintToken></MintToken>
         <MintNft></MintNft>
+        <SendSol></SendSol>
       </header>
     </div>
   );
