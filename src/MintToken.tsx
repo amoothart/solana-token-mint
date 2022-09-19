@@ -2,7 +2,7 @@ import { Account, createMint, getAccount, getMint, getOrCreateAssociatedTokenAcc
 import { clusterApiUrl, Connection, Keypair, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
 
 //Ensure buffer class is setup
-// window.Buffer = window.Buffer || require("buffer").Buffer
+window.Buffer = window.Buffer || require("buffer").Buffer
 
 function MintToken() {
   const connection = new Connection(clusterApiUrl('devnet'), 'confirmed')
@@ -38,7 +38,7 @@ function MintToken() {
 
   async function mintToken() {
     // 10B is based on the smallest decimal so this is 10 tokens
-    const signature = await mintTo(connection, fromWallet, mint, fromTokenAccount.address, fromWallet.publicKey, 10^10)
+    const signature = await mintTo(connection, fromWallet, mint, fromTokenAccount.address, fromWallet.publicKey, 10000000000) //10B => 10 tokens
     console.log(`Mint signature: ${signature}`)
   }
 
@@ -60,7 +60,7 @@ function MintToken() {
       fromTokenAccount.address,
       toTokenAccount.address,
       fromWallet.publicKey,
-      10^9
+      1000000000 //1B => 1 token
     )
     console.log(`finished transfer with ${signature}`)
   } 

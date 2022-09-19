@@ -2,7 +2,7 @@ import { Account, AuthorityType, createMint, createSetAuthorityInstruction, getO
 import { clusterApiUrl, Connection, Keypair, LAMPORTS_PER_SOL, PublicKey, sendAndConfirmTransaction, Transaction } from "@solana/web3.js";
 
 //Ensure buffer class is setup
-// window.Buffer = window.Buffer || require("buffer").Buffer
+window.Buffer = window.Buffer || require("buffer").Buffer
 
 function MintNft() {
   const connection = new Connection(clusterApiUrl('devnet'), 'confirmed')
